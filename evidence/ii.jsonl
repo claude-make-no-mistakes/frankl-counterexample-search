@@ -1,0 +1,2 @@
+{"case": "ii", "clauses": 530205, "variables": 36952, "conflict_budget": 180000, "max_relations": null, "all_closure": true}
+{"status": "unknown", "reason": "conflict budget", "case": "ii", "max_relations": null, "rounds": 1, "closure_constraints": 1431, "clauses": 530205, "omitted_closure": 0, "seconds": 100.185, "restarts": 10021, "conflicts": 180001, "decisions": 710012, "propagations": 265147083}

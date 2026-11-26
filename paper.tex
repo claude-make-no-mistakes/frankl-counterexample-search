@@ -1,0 +1,184 @@
+\documentclass[10pt]{article}
+\usepackage[top=0.67in,bottom=0.72in,left=0.83in,right=0.83in]{geometry}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\DeclareFontShape{OMX}{cmex}{m}{n}{<->cmex10}{}
+\DeclareMathSizes{10}{10}{7}{7}
+\DeclareMathSizes{9}{10}{7}{7}
+\linespread{0.955}
+\newtheorem{theorem}{Theorem}
+\title{Incomparability constraints for a 55-member Frankl counterexample}
+\author{Achita Anantachina}
+\date{26 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider the proposed first remaining size for a minimum
+counterexample to the union-closed sets conjecture. In each of the
+four 55-member cases, any two maximal points in the reduced domination
+order have at least four common incomparable points. The domination
+order must have at least 20 incomparable pairs.
+\end{abstract}
+
+\section{The four cases}
+Frankl's conjecture asks whether every finite union-closed family with
+a nonempty member has a point in at least half the members. Suppose a
+smallest counterexample has 55 members and choose one with smallest
+support among those. The 12-element theorem gives support size at
+least 13 \cite{vuckovic}. Write \(m\) for that size. We use the maximal
+avoiding set argument of Hu and its formulation in \cite{bhattacharjee}.
+
+The chosen family is separating. If two points appeared in exactly
+the same members, projecting away one would preserve distinctness,
+union closure, and every remaining frequency. A minimal member can
+be removed while preserving union closure. Thus at least one point
+\(t\) has frequency 27, since otherwise that removal would give a
+smaller counterexample. Let \(A_i\) be the union of the members avoiding
+\(i\), and let \(U\) be the support. Define \(x\preceq y\) when every
+member containing \(x\) also contains \(y\). Separation makes this a
+partial order. The \(A_i\) are distinct and \(t\in A_i\) whenever
+\(i\ne t\), since otherwise \(t\preceq i\) would violate separation
+or the frequency cap.
+
+The 28 members avoiding \(t\) form a smaller union-closed family, so
+some point occurs in at least 14 of them. Choose such a point \(p\)
+maximal under domination among those with that property. If
+\(i\notin\{t,p\}\) and \(p\notin A_i\), then \(p\preceq i\), so \(i\)
+also has the property. Therefore \(p\) belongs to \(U\) and all
+\(A_i\) for \(i\in W=U\setminus\{t,p\}\). In particular, \(p\)
+occurs in at least \(14+m-1\) members and at most 27, so \(m\le14\).
+
+Split members into four blocks by membership of \(t,p\). Let \(R,S,T\)
+be the sets of their complements within \(W\) for blocks 10, 01, and
+00. Put \(D(i)=\{x\in W:x\preceq i\}\). The block 11 complements
+include the empty mask and all \(D(i)\), with at most one extra mask
+\(E\). If \(b\) is the number of block 11 members and \(a=|S|\), then
+\(b\ge m-1\), \(a\ge14\), and \(a+b\le27\). The other sizes are
+\(|R|=27-b\) and \(|T|=28-a\). This gives
+\[
+\begin{array}{c|rrr|c}
+m & |R| & |S| & |T| & \text{extra mask}\\ \hline
+14 &14&14&14&\text{no}\\
+13 &15&14&14&\text{no}\\
+13 &15&15&13&\text{no}\\
+13 &14&14&14&\text{yes}
+\end{array}
+\]
+
+All masks are ideals of the domination order on \(W\). A singleton
+member gives an injection from sets avoiding its point into sets
+containing it, by taking unions. For a two-point member the same
+injection takes sets containing neither point to sets containing both,
+so the two frequencies sum to at least the family size. Thus no
+member has size one or two. If \(w=|W|\), all masks in \(R,S\) have
+size at most \(w-2\). Masks in \(T\) have size at most \(w-3\) or
+are all of \(W\), and every block 11 mask is proper. Each point of
+\(W\) belongs to at least 28 complement masks, counted over all four blocks.
+
+\section{The incomparability bound}
+\begin{theorem}
+For any of the four cases, any two maximal points of \(W\) have at
+least four common incomparable points, and \(W\) has at least
+20 incomparable pairs.
+\end{theorem}
+\begin{proof}
+There are at least two maxima, since a greatest point would have
+principal ideal \(W\), giving the forbidden member \(\{t,p\}\).
+For distinct maxima \(x,y\), let \(C=D(x)\cup D(y)\) and
+\(h=w-|C|\). A mask containing both contains \(C\), and \(h\) is the
+number of common incomparable points. The full member \(U\) and
+the \(w-2\) members corresponding to principal ideals other than
+\(D(x),D(y)\) contain both points. The two classes of members
+avoiding \(x\) and \(y\) therefore have union of size at most
+\(55-(w-1)\). Their sizes are each at least 28, so at least \(w\)
+complement masks contain both points.
+
+If \(h\le3\), at most four such masks occur in each of \(R,S\), at
+most two in \(T\), and at most one in block 11, namely \(E\) if present.
+Here the four possibilities for \(R,S\) are \(C\) and its extensions
+by one point. The two possibilities for \(T\) are \(C\) and \(W\).
+This total is below \(w\), except possibly when \(w=11\), \(h=3\), and
+\(E\) is present and all the bounds are attained. Then both \(R\)
+and \(S\) contain all four permitted masks, and their cross
+intersections include distinct masks containing \(x,y\). Such an
+intersection must be a block 11 mask by union closure, and the
+only possibility is \(E\). This is a contradiction. Thus \(h\ge4\).
+In particular, there cannot be only two maxima since every point
+lies below some maximal point.
+
+Let \(k\) be the number of maxima and \(N_i\) the nonmaximal points
+incomparable with maximum \(i\). For \(k=3,4,5\), each pair of such sets
+has intersection of size at least \(6-k\). A point of \(N_i\)
+is comparable to at least one maximum other than \(i\), so it belongs
+to at most \(k-2\) of the other sets. Hence
+\[
+|N_i|\ge\left\lceil\frac{(k-1)(6-k)}{k-2}\right\rceil.
+\]
+Counting these pairs and the maximal antichain gives at least
+21, 18, and 20 incomparable pairs for \(k=3,4,5\), respectively.
+For \(k\ge7\), the maximal antichain alone suffices.
+
+For \(k=4\), suppose there are at most 19 incomparable pairs.
+There are at least 12 between maxima and nonmaxima, so at most one
+lies entirely among nonmaxima. If the nonmaxima form a chain, their
+incomparability sets \(N_i\) are nonempty terminal segments of that
+chain. The last point of the chain would lie in every \(N_i\).
+Every nonmaximal point lies below some maximal point, so this is
+impossible. If there is one nonmaximal
+incomparable pair, then \(|N_i|=3\) for each maximum. Each \(N_i\)
+has at least two points in common with each other \(N_j\), so all its
+points must occur in exactly three of the four sets. The 12
+memberships give four points, each below a different sole maximum.
+They must be pairwise incomparable, since comparability would force
+one to lie below a second maximum. This gives six nonmaximal pairs.
+
+For \(k=6\), at most 19 incomparable pairs allow at most four outside
+the maximal antichain. If each nonmaximal point is incomparable with
+at most three maxima, every ideal containing four maxima contains
+all nonmaxima. Thus a mask in \(R\) or \(S\) includes at most four maxima
+and a proper mask in \(T\) at most three. The full mask in \(T\)
+contributes at most six, the principal masks together contribute
+six, and \(E\) contributes at most five. The total over the six maxima
+is at most the following quantity, where \(\epsilon=1\) if \(E\) exists
+and zero otherwise.
+\[
+4(|R|+|S|)+3(|T|-1)+12+5\epsilon.
+\]
+The four bounds are 163, 167, 168, and 168. The only other case has
+one nonmaximal point incomparable with four maxima, and every other
+nonmaximal point lies below all six maxima. The bounds increase by
+at most one, since a proper mask in \(T\) with four maxima must simply
+omit that point and take precisely the four maxima incomparable
+with it. In either case each of \(R,S\) falls at least one below its
+individual cap. If all masks had four maxima, a trace on the maxima
+would determine at most two masks. There are at least 14 masks in
+each family, so two have different traces and their intersection is
+a member with at most three maxima. Subtracting two from even
+the increased bound gives less than the required \(6\cdot28=168\).
+\end{proof}
+
+\section{Computational search}
+The companion encoder uses Boolean variables for the domination
+relation and the masks in each block. It imposes cardinality,
+separation-based frequency bounds, and the incomparability restrictions
+above. For pairs of blocks, a union of members corresponds to an
+intersection of masks in the block determined by their label union.
+A full encoding adds all such conditions. The lazy variant adds the
+condition for a pair of row positions when the current model violates
+it. A separate integer-mask checker verifies every union and frequency
+of any extracted family.
+
+The bounded runs reported in the companion data do not settle any
+of the four full cases. The general conjecture remains open.
+The computation and exposition used AI assistance.
+
+\begin{thebibliography}{9}
+\bibitem{vuckovic} B. Vu\v{c}kovi\'c and M. \v{Z}ivkovi\'c.
+\href{https://ipsitransactions.org/journals/papers/tir/2017jan/fullPaper.pdf}
+{The 12-element case of Frankl's conjecture} (2017).
+\bibitem{bhattacharjee} D. Bhattacharjee and U. Bhattacharya.
+\href{https://zenodo.org/records/23645724}
+{Attaining the entropy limit for union-closed families} (2026).
+\end{thebibliography}
+\end{document}
